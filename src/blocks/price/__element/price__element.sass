@@ -1,0 +1,31 @@
+.price__element
+  position: relative
+  background-color: $bg-white
+  height: 200px !important
+  box-sizing: border-box
+  border-radius: 5px
+  display: flex !important
+  flex-direction: column
+  padding: 16px
+  gap: 16px
+  font-size: 14px
+  line-height: 18px
+  letter-spacing: 0.2px
+
+@media screen and (min-width: 520px)
+  .price__element
+    flex-direction: row
+    height: 65px !important
+    box-sizing: border-box
+    border-bottom: 1px solid $border
+    padding: 0 16px
+    &:last-child
+      border: none
+    span
+      line-height: 64px
+      &::before
+        display: none
+
+@media screen and (min-width: 880px)
+  .price__element
+    padding: 0 23px

@@ -1,0 +1,23 @@
+.tech__list
+  height: 160px !important
+  list-style: none
+  padding: 0
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
+@media screen and (min-width: 525px)
+  .tech__list
+    display: flex
+    flex-wrap: wrap
+    gap: 16px 24px
+    overflow: hidden
+
+@media screen and (min-width: 754px)
+  .tech__list
+    gap: 16px 24px
+
+@media screen and (min-width: 1120px)
+  .tech__list
+    width: 100%
+    gap: 16px 32px

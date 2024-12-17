@@ -1,0 +1,25 @@
+.menu
+  margin: 24px 0 24px 16px
+  padding: 0
+  color: $active-grey
+  font-size: 16px
+  position: relative
+  &::after
+    content: ""
+    text-align: right
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 24px
+    height: 40px
+    background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
+
+@media screen and (min-width: 520px)
+  .menu
+    margin: 32px 0 32px 24px
+    &::after
+      display: none
+
+@media screen and (min-width: 880px)
+  .menu
+    margin: 8px 0 2px 32px

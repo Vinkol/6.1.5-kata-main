@@ -1,0 +1,24 @@
+.tech
+  position: relative
+  padding-bottom: 24px
+  margin: 16px 0 -3px 16px
+  &::after
+    content: ""
+    text-align: right
+    position: absolute
+    bottom: 40px
+    right: 0
+    width: 24px
+    height: 160px
+    background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
+    z-index: 1
+
+@media screen and (min-width: 520px)
+  .tech
+    margin: 24px 24px -23px 24px
+    &::after
+      display: none
+
+@media screen and (min-width: 880px)
+  .tech
+    margin: 24px 32px 25px 32px

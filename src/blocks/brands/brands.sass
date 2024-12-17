@@ -1,0 +1,25 @@
+.brands
+  position: relative
+  padding-bottom: 24px
+  margin: 15px 0 -5px 16px
+  &::after
+    content: ""
+    text-align: right
+    position: absolute
+    bottom: 40px
+    right: 0
+    width: 24px
+    height: 72px
+    background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
+    z-index: 1
+
+@media screen and (min-width: 520px)
+  .brands
+    margin: 24px 24px
+    padding-bottom: 2px
+    &::after
+      display: none
+
+@media screen and (min-width: 880px)
+  .brands
+    margin: 32px 32px 49px 32px

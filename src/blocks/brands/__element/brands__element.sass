@@ -1,0 +1,25 @@
+.brands__element
+  background-color: $bg-white
+  height: 72px
+  box-sizing: border-box
+  border: 1px solid $border
+  border-radius: 5px
+  display: flex !important
+  cursor: pointer
+  transition: transform .3s
+  &:hover img:last-child
+    transition: transform .3s
+    transform: scale(1.1)
+  &:active
+    transform: scale(0.97)
+
+@media screen and (min-width: 520px)
+  .brands__element
+    width: 224px
+    display: flex
+    flex-wrap: wrap
+
+@media screen and (min-width: 880px)
+  .brands__element
+    width: 240px
+    display: flex
