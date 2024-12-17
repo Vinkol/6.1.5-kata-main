@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vinkol/6.1.5-kata.git"
+    "url": "git+https://github.com/vinkol/6.1.5-kata-main.git"
   },
   "author": "Dzmitry Yashin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vinkol/6.1.5-kata/issues"
+    "url": "https://github.com/vinkol/6.1.5-kata-main/issues"
   },
-  "homepage": "https://github.com/vinkol/6.1.5-kata#readme",
+  "homepage": "https://github.com/vinkol/6.1.5-kata-main#readme",
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
