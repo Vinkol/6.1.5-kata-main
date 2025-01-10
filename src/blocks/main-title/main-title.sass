@@ -6,3 +6,51 @@
   .main-title
     margin: 0
     padding-top: 42px
+
+.main-title__container
+  display: none
+
+@media screen and (min-width: 1366px)
+  .main-title__container
+    display: flex
+    margin: auto 0 auto auto
+
+
+.main-title__element
+  display: flex
+  cursor: pointer
+  margin: auto 32px auto 0
+
+.main-title__icon
+  margin: auto 0 auto 8px
+  cursor: pointer
+  transition: transform 0.5s
+  &:hover
+    transform: scale(1.1)
+
+.main-title__line
+  border-right: 4px solid $main-title-line
+  border-top-right-radius: 4px
+  border-bottom-right-radius: 4px
+  height: 40px
+  margin-right: 12px
+
+@media screen and (min-width: 768px)
+  .main-title__line
+    margin-right: 20px
+
+@media screen and (min-width: 880px)
+  .main-title__line
+    margin-right: 30px
+
+.main-title__paragraph
+  margin: auto 0
+  font-size: 16px
+  line-height: 24px
+  letter-spacing: -0.1px
+  font-weight: 600
+
+.main-title__title
+  margin: auto 0
+  font-size: 28px
+  letter-spacing: -0.6px

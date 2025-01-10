@@ -3,7 +3,7 @@
   flex-direction: column
   justify-content: start
 
-@media screen and (min-width: 520px)
+@media screen and (min-width: 768px)
   .article
     flex-direction: row
     justify-content: space-between
@@ -14,3 +14,42 @@
   .article
     margin: 0 32px 0 34px
     padding-bottom: 49px
+
+.article__container
+  display: flex
+  flex-direction: column
+  margin: 0 16px 16px 16px
+
+@media screen and (min-width: 768px)
+  .article__container
+    margin: 0
+
+.article__image
+  width: 100%
+  object-fit: contain
+
+@media screen and (min-width: 768px)
+  .article__image
+    width: 50%
+    object-fit: cover
+    border-radius: 10px
+
+.article__paragraph
+  margin: 0
+  font-size: 14px
+  line-height: 18px
+  letter-spacing: 0.2px
+  overflow: hidden
+  height: 90px
+
+@media screen and (min-width: 768px)
+  .article__paragraph
+    max-width: 312px
+    height: 160px
+    line-height: 20px
+    margin-bottom: -16px
+
+@media screen and (min-width: 880px)
+  .article__paragraph
+    max-width: 490px
+    padding-top: 9px

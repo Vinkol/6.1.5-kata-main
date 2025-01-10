@@ -2,18 +2,18 @@
 const screenWidth = window.screen.width
 // селекторы бургер меню
 const burger = document.querySelector('.burger');
-const openBurgerBtn = document.getElementById('open-burger')
-const closeBurgerBtn = document.getElementById('close-burger')
+const openBurgerBtn = document.querySelector('.open-burger');
+const closeBurgerBtn = document.querySelector('.close-burger');
 // селекторы меню для заказа звонка
-const phone = document.getElementById('phone')
-const openPhoneBurgerBtn = document.getElementById('open-phone-burger')
-const closePhoneBtn = document.getElementById('close-phone')
-const openPhone = document.getElementById('open-phone')
+const phone = document.querySelector('.phone');
+const openPhoneBurgerBtn = document.querySelector('.open-phone-burger');
+const closePhoneBtn = document.querySelector('.close-phone');
+const openPhone = document.querySelector('.open-phone');
 // селекторы меню обратной связи
-const chat = document.getElementById('chat')
-const openChatBurgerBtn = document.getElementById('open-chat-burger')
-const closeChatBtn = document.getElementById('close-chat')
-const openChat = document.getElementById('open-chat')
+const chat = document.querySelector('.chat');
+const openChatBurgerBtn = document.querySelector('.open-chat-burger');
+const closeChatBtn = document.querySelector('.close-chat');
+const openChat = document.querySelector('.open-chat');
 
 // функции закрытия и открытия 
 const openMenu = (menu) => {

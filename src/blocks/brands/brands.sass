@@ -13,7 +13,7 @@
     background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
     z-index: 1
 
-@media screen and (min-width: 520px)
+@media screen and (min-width: 768px)
   .brands
     margin: 24px 24px
     padding-bottom: 2px
@@ -23,3 +23,64 @@
 @media screen and (min-width: 880px)
   .brands
     margin: 32px 32px 49px 32px
+
+.brands__button
+  margin: auto 16px auto auto
+
+.brands__element
+  background-color: $bg-white
+  height: 72px
+  box-sizing: border-box
+  border: 1px solid $border
+  border-radius: 5px
+  display: flex !important
+  cursor: pointer
+  transition: transform .3s
+  &:hover img:last-child
+    transition: transform .3s
+    transform: scale(1.1)
+  &:active
+    transform: scale(0.97)
+
+@media screen and (min-width: 768px)
+  .brands__element
+    width: 224px
+    display: flex
+    flex-wrap: wrap
+
+@media screen and (min-width: 880px)
+  .brands__element
+    width: 240px
+    display: flex
+
+.brands__image
+  margin: auto auto auto 16px
+
+@media screen and (min-width: 880px)
+  .brands__image
+    margin: auto auto auto 16px
+
+.brands__list
+  height: 160px
+  list-style: none
+  padding: 0
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
+@media screen and (min-width: 525px)
+  .brands__list
+    display: flex
+    flex-wrap: wrap
+    gap: 16px 24px
+    overflow: hidden
+
+@media screen and (min-width: 754px)
+  .brands__list
+    gap: 16px 24px
+
+@media screen and (min-width: 1120px)
+  .brands__list
+    width: 100%
+    gap: 16px 32px
+    margin-top: -8px

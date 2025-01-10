@@ -13,3 +13,44 @@
 @media screen and (min-width: 1366px)
   .header
     display: none
+
+
+.header__icon
+  width: 40px
+  height: 40px
+  margin: auto 0
+  align-items: center
+  border: none
+  background-color: $bg-white
+  cursor: pointer
+  transition: transform 0.5s
+  &:hover
+    transform: scale(1.1)
+
+.header__line_tablet
+  display: none
+
+@media screen and (min-width: 768px)
+  .header__line_tablet
+    display: flex
+    margin-left: 4px    
+
+.header__line
+  display: flex
+  border-left: 2px solid $border
+  height: 32px
+  margin: auto 4px auto 0
+
+.header__logo 
+  height: 50.81px
+  margin: auto auto auto 0
+  cursor: pointer
+
+.header__tablet-icons
+  display: none
+
+@media screen and (min-width: 480px)
+  .header__tablet-icons
+    display: flex
+    margin-right: 4px
+    gap: 16px

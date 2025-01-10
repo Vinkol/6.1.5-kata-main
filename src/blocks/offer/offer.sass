@@ -1,7 +1,7 @@
 .offer
   margin: 6px 16px
 
-@media screen and (min-width: 520px)
+@media screen and (min-width: 768px)
   .offer
     margin: 24px 24px
     width: 421px
@@ -9,3 +9,41 @@
 @media screen and (min-width: 880px)
   .offer
     margin: 32px 30px
+
+@keyframes offer
+  0%
+    margin-left: 9px
+  50%
+    margin-left: 12px
+  100%
+    margin-left: 9px
+
+.offer__link
+  margin: 16px 0
+  font-size: 16px
+  line-height: 24px
+  letter-spacing: -0.2px
+  font-weight: 600
+  display: inline-block
+  cursor: pointer
+  &:hover
+    &::after
+      animation: offer 1s infinite
+      
+  &::after
+    content: ''
+    position: absolute;
+    background-image: url(../images/Line.svg)
+    background-repeat: no-repeat
+    background-position: center
+    display: inline-block
+    width: 6px
+    height: 26px
+    margin-left: 9px 
+
+.offer__text
+  margin: 0
+  font-size: 14px
+  line-height: 20px
+  letter-spacing: 0.2px
+     

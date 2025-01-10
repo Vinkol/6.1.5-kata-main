@@ -13,7 +13,7 @@
     background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
     z-index: 1
 
-@media screen and (min-width: 520px)
+@media screen and (min-width: 768px)
   .tech
     margin: 24px 24px -23px 24px
     &::after
@@ -22,3 +22,60 @@
 @media screen and (min-width: 880px)
   .tech
     margin: 24px 32px 25px 32px
+
+.tech__button
+  margin: auto 0 0 auto
+
+.tech__element 
+  background-color: #FFFFFF
+  height: 160px !important
+  box-sizing: border-box
+  border: 1px solid #EAEAEA
+  border-radius: 5px
+  display: flex !important
+  cursor: pointer
+  padding: 16px
+  transition: transform .3s
+  font-weight: 600
+  line-height: 24px
+  letter-spacing: -0.2px
+  &:hover img:last-child
+    transition: transform .3s
+    transform: scale(1.1)
+  &:active
+    transform: scale(0.97)
+
+@media screen and (min-width: 768px)
+  .tech__element
+    width: 224px
+    display: flex
+    flex-wrap: wrap
+
+@media screen and (min-width: 880px)
+  .tech__element
+    width: 240px
+    display: flex
+
+.tech__list
+  height: 160px !important
+  list-style: none
+  padding: 0
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
+@media screen and (min-width: 525px)
+  .tech__list
+    display: flex
+    flex-wrap: wrap
+    gap: 16px 24px
+    overflow: hidden
+
+@media screen and (min-width: 754px)
+  .tech__list
+    gap: 16px 24px
+
+@media screen and (min-width: 1120px)
+  .tech__list
+    width: 100%
+    gap: 16px 32px

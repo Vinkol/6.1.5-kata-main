@@ -8,9 +8,20 @@
   cursor: pointer
   transition: opacity .3s
   letter-spacing: -0.2px
+  border: none
+  background: none
   &:hover
     opacity: 0.6
 
-@media screen and (min-width: 520px)
+  &::before
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("/src/images/expand.svg");
+    transition: transform .5s ease-in-out;
+    
+
+@media screen and (min-width: 768px)
   .read-more
     margin-top: 25px

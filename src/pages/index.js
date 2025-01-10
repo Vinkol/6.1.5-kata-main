@@ -5,27 +5,27 @@ import 'swiper/css/bundle';
 // Общая пагинация
 let pagination = document.querySelectorAll(".swiper-pagination");
 // Селекторы секции брендов
-let brands = document.querySelector(".brands")
-let readMoreBrands = brands.querySelector(".read-more");
-let brandsList = document.querySelector(".brands__list");
-let brandsElements = document.querySelectorAll(".brands__element");
-let readMoreIcon = readMoreBrands.querySelector(".read-more__icon");
-let readMoreText = readMoreBrands.querySelector(".read-more__text");
+const brands = document.querySelector(".brands")
+const readMoreBrands = brands.querySelector(".read-more");
+const brandsList = document.querySelector(".brands__list");
+const brandsElements = document.querySelectorAll(".brands__element");
+const readMoreIcon = readMoreBrands.querySelector(".read-more__icon");
+const readMoreText = readMoreBrands.querySelector(".read-more__text");
 // Селекторы секции видов техниики
-let techs = document.querySelector(".tech")
-let readMoreTechs = techs.querySelector(".read-more");
-let techList = document.querySelector(".tech__list");
-let techElements = document.querySelectorAll(".tech__element");
+const techs = document.querySelector(".tech")
+const readMoreTechs = techs.querySelector(".read-more");
+const techList = document.querySelector(".tech__list");
+const techElements = document.querySelectorAll(".tech__element");
 // Селекторы секции стоимости
-let price = document.querySelector(".price")
-let priceList = document.querySelector(".price__list");
-let priceElements = document.querySelectorAll(".price__element");
+const price = document.querySelector(".price")
+const priceList = document.querySelector(".price__list");
+const priceElements = document.querySelectorAll(".price__element");
 
 // Измеряем размер экрана
 const screenWidth = window.screen.width
 
 const checkScreen = (screen) => {
-  if (screen < 520) { // Условия для мобильной версии
+  if (screen < 768) { // Условия для мобильной версии
     pagination.forEach(e => e.style = "visibility: visible")
     // Слайдер для брендов
     readMoreBrands.style = "display: none";
