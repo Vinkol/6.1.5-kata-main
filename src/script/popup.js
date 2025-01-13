@@ -1,60 +1,66 @@
-// проверяем размер экрана, чтобы не закрывать бургер на экранах > 1366px
-const screenWidth = window.screen.width
-// селекторы бургер меню
-const burger = document.querySelector('.burger');
-const openBurgerBtn = document.querySelector('.open-burger');
-const closeBurgerBtn = document.querySelector('.close-burger');
-// селекторы меню для заказа звонка
-const phone = document.querySelector('.phone');
-const openPhoneBurgerBtn = document.querySelector('.open-phone-burger');
-const closePhoneBtn = document.querySelector('.close-phone');
-const openPhone = document.querySelector('.open-phone');
-// селекторы меню обратной связи
-const chat = document.querySelector('.chat');
-const openChatBurgerBtn = document.querySelector('.open-chat-burger');
-const closeChatBtn = document.querySelector('.close-chat');
-const openChat = document.querySelector('.open-chat');
+// Проверяем размер экрана для закрытия бургера на экранах > 1366px
+const screenWidth = window.screen.width;
 
-// функции закрытия и открытия 
+// Селекторы меню
+const menus = {
+  burger: {
+    menu: document.querySelector('.burger'),
+    openBtn: document.querySelector('.open-burger'),
+    closeBtn: document.querySelector('.close-burger'),
+  },
+  phone: {
+    menu: document.querySelector('.phone'),
+    openBtn: document.querySelector('.open-phone-burger'),
+    closeBtn: document.querySelector('.close-phone'),
+    additionalOpenBtn: document.querySelector('.open-phone'),
+  },
+  chat: {
+    menu: document.querySelector('.chat'),
+    openBtn: document.querySelector('.open-chat-burger'),
+    closeBtn: document.querySelector('.close-chat'),
+    additionalOpenBtn: document.querySelector('.open-chat'),
+  },
+};
+
+// Функции для управления меню
 const openMenu = (menu) => {
-  menu.style = "display: flex";
-}
+  menu.style.display = 'flex';
+};
+
 const closeMenu = (menu) => {
-  menu.style = "display: none";
-}
+  menu.style.display = 'none';
+};
 
-// слушатели бургера
-burger.addEventListener('click', (e) => {
-  if (e.target === burger)
-    closeMenu(burger)
-});
-openBurgerBtn.addEventListener('click', () => openMenu(burger));
-closeBurgerBtn.addEventListener('click', () => closeMenu(burger));
+const toggleMenu = (menu, isBurger = false) => {
+  openMenu(menu);
+  if (isBurger && screenWidth < 1366) {
+    closeMenu(menus.burger.menu);
+  }
+};
 
-// слушатели обратной связи
-chat.addEventListener('click', (e) => {
-  if (e.target === chat)
-    closeMenu(chat)
-});
-openChatBurgerBtn.addEventListener('click', () => {
-  openMenu(chat)
-  if (screenWidth < 1366) {
-    closeMenu(burger)
+// Установка слушателей для каждого меню
+Object.keys(menus).forEach((key) => {
+  const { menu, openBtn, closeBtn, additionalOpenBtn } = menus[key];
+
+  // Закрытие меню при клике на его область
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) {
+      closeMenu(menu);
+    }
+  });
+
+  // Открытие меню
+  if (openBtn) {
+    openBtn.addEventListener('click', () => toggleMenu(menu, key !== 'burger'));
+  }
+
+  // Дополнительная кнопка открытия меню
+  if (additionalOpenBtn) {
+    additionalOpenBtn.addEventListener('click', () => openMenu(menu));
+  }
+
+  // Закрытие меню
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => closeMenu(menu));
   }
 });
-openChat.addEventListener('click', () => openMenu(chat));
-closeChatBtn.addEventListener('click', () => closeMenu(chat));
-
-// слушатели для заказа звонка
-phone.addEventListener('click', (e) => {
-  if (e.target === phone)
-    closeMenu(phone)
-});
-openPhoneBurgerBtn.addEventListener('click', () => {
-  openMenu(phone)
-  if (screenWidth < 1366) {
-    closeMenu(burger)
-  }
-});
-openPhone.addEventListener('click', () => openMenu(phone));
-closePhoneBtn.addEventListener('click', () => closeMenu(phone));
