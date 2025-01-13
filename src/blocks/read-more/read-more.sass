@@ -10,8 +10,9 @@
   letter-spacing: -0.2px
   border: none
   background: none
+  
   &:hover
-    opacity: 0.6
+    opacity: 0.7
 
   &::before
     content: "";
@@ -21,7 +22,44 @@
     background: url("/src/images/expand.svg");
     transition: transform .5s ease-in-out;
     
+.shown::before
+    transform: rotate(180deg);
+    transition: .5s ease-in-out;
+
 
 @media screen and (min-width: 768px)
   .read-more
+    margin-top: 25px
+
+.read-more-tech
+  display: flex
+  font-size: 16px
+  font-weight: 600
+  height: 24px
+  align-items: center
+  margin: 16px 0 0 0
+  cursor: pointer
+  transition: opacity .3s
+  letter-spacing: -0.2px
+  border: none
+  background: none
+  
+  &:hover
+    opacity: 0.7
+
+  &::before
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("/src/images/expand.svg");
+    transition: transform .5s ease-in-out;
+    
+.shown::before
+    transform: rotate(180deg);
+    transition: .5s ease-in-out;
+
+
+@media screen and (min-width: 768px)
+  .read-more-tech
     margin-top: 25px

@@ -44,28 +44,39 @@
         </div>
       </div>
     </section>
-    <div class="popup" id="chat">
+    <div class="popup chat">
       <div class="popup__container">
         <button type="button" class="popup__close close-chat"></button>
         <h2 class="popup__title">Обратная связь</h2>
-        <form action="#" class="popup__form">
-          <input type="text" class="popup__input" placeholder="Имя" name="text">
-          <input type="tel" class="popup__input" placeholder="Телефон" name="phone">
-          <input type="email" class="popup__input" placeholder="Электронная почта" name="mail">
-          <textarea name="message" id="message" class="popup__textarea" placeholder="Сообщение"></textarea>
-          <p class="popup__message">Нажимая “отправить”, вы даете согласие на 
+        <form action="#" class="popup__form valid__form">
+          <input type="text" class="popup__input valid__name" placeholder="Имя" name="text" required>
+          <span class="error-message name-error"></span> <!-- Сообщение об ошибке -->
+    
+          <input type="tel" class="popup__input valid__phone" placeholder="Телефон" name="phone" required>
+          <span class="error-message phone-error"></span> <!-- Сообщение об ошибке -->
+    
+          <input type="email" class="popup__input valid__email" placeholder="Электронная почта" name="mail" required>
+          <span class="error-message email-error"></span> <!-- Сообщение об ошибке -->
+    
+          <textarea name="message" class="popup__textarea valid__message" placeholder="Сообщение" required></textarea>
+          <span class="error-message message-error"></span> <!-- Сообщение об ошибке -->
+    
+          <p class="popup__message">
+            Нажимая “отправить”, вы даете согласие на 
             <span class="popup__span">обработку персональных данных</span> и
-            соглашаетесь с нашей <span class="popup__span">политикой конфиденциальности</span></p>
+            соглашаетесь с нашей <span class="popup__span">политикой конфиденциальности</span>
+          </p>
           <button type="submit" class="popup__submit">Отправить</button>
         </form>
       </div>
-    </div>
-    <div class="popup" id="phone">
+    </div>    
+    <div class="popup phone">
       <div class="popup__container">
         <button type="button" class="popup__close close-phone"></button>
         <h2 class="popup__title">Заказать звонок</h2>
-        <form action="#" class="popup__form">
-          <input type="tel" class="popup__input" placeholder="Телефон" name="phone">
+        <form action="#" class="popup__form valid__form">
+          <input type="tel" class="popup__input valid__phone" placeholder="Телефон" name="phone" required>
+          <span class="error-message phone-error"></span> <!-- Сообщение об ошибке -->
           <p class="popup__message">Нажимая “отправить”, вы даете согласие на 
             <span class="popup__span">обработку персональных данных</span> и
             соглашаетесь с нашей <span class="popup__span">политикой конфиденциальности</span></p>
@@ -122,89 +133,89 @@
               количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
               советуют нас родным и близким.
             </p>
-            <button class="read-more read-more__text">Читать далее</button>
+            <button class="read-more">Читать далее</button>
           </div>
           <img src="./images/main_image.jpg" alt="Обложка сайта" class="article__image">
         </article>
       </section>
       <div class="section-title">Ремонт техники различных брендов</div>
       <section class="brands">
-        <ul class="brands__list">
+        <ul class="brands__list"> 
           <li class="brands__element">
             <img src="./images/lenovo.png" alt="Леново" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/samsung.png" alt="Самсунг" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/apple.png" alt="Эпл" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/viewsonic.png" alt="вьюсоник" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/bosch.png" alt="бош" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/hp.png" alt="хп" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/acer.png" alt="асер" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/sony.png" alt="Сони" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/lenovo.png" alt="Леново" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/samsung.png" alt="Самсунг" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
           <li class="brands__element">
             <img src="./images/apple.png" alt="Эпл" class="brands__image">
-            <img src="./images/go.svg" alt="Иконка вперед" class="button brands__button">
+            <span class="button brands__button"></span>
           </li>
         </ul>
         <div class="swiper-pagination"></div>
-        <button class="read-more read-more__text">Показать все</button>
+        <button class="read-more">Показать все</button>
       </section>
       <div class="section-title">Ремонт различных видов техники</div>
       <section class="tech">
         <ul class="tech__list">
           <li class="tech__element">Ремонт ноутбуков
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
           <li class="tech__element">Ремонт планшетов
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
           <li class="tech__element">Ремонт ПК
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
           <li class="tech__element">Ремонт монитора
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
           <li class="tech__element">Ремонт планшетов
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
           <li class="tech__element">Ремонт ПК
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
           <li class="tech__element">Ремонт монитора
-            <img src="./images/go.svg" alt="Иконка вперед" class="button tech__button">
+            <span class="button tech__button"></span>
           </li>
         </ul>
         <div class="swiper-pagination"></div>
-        <button class="read-more read-more__text">Показать все</button>
+        <button class="read-more-tech">Показать все</button>
       </section>
       <div class="section-title">Цены на услуги</div>
       <section class="price">

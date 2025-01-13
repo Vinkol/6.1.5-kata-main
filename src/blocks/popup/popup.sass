@@ -148,9 +148,25 @@
     border-bottom-right-radius: 4px
     background-color: $main-title-line
 
+/* Добавьте стиль для поля с ошибкой */
+.popup__input.error, .popup__textarea.error 
+  border: 1px solid red
+
+
+/* Сообщения об ошибках */
+.error-message 
+  color: red
+  font-size: 12px
+  display: none /* Скрыто по умолчанию */
+
+
 @media screen and (min-width: 450px)
   .popup__title
     &::before
       top: -8px
       left: -32px
+
+
+
+
 

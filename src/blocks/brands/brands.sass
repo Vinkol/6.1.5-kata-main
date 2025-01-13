@@ -29,7 +29,7 @@
 
 .brands__element
   background-color: $bg-white
-  height: 72px
+  height: 72px !important
   box-sizing: border-box
   border: 1px solid $border
   border-radius: 5px
@@ -41,6 +41,7 @@
     transform: scale(1.1)
   &:active
     transform: scale(0.97)
+
 
 @media screen and (min-width: 768px)
   .brands__element
@@ -64,18 +65,20 @@
   height: 160px
   list-style: none
   padding: 0
+  overflow: hidden 
+  transition: height 0.5s ease 
   &::-webkit-scrollbar
     width: 0
     height: 0
 
-@media screen and (min-width: 525px)
+@media screen and (min-width: 768px)
   .brands__list
     display: flex
     flex-wrap: wrap
     gap: 16px 24px
     overflow: hidden
 
-@media screen and (min-width: 754px)
+@media screen and (min-width: 768px)
   .brands__list
     gap: 16px 24px
 
