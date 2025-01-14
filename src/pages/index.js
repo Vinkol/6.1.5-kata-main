@@ -33,17 +33,27 @@ const swipers = {}; // Хранилище для экземпляров Swiper
 function updateElementsToShow() {
   const elementsToShow = screenWidth < 768 ? 1000 : screenWidth < 1120 ? 6 : 8;
 
-  // Скрываем кнопку "Показать все" на мобильных устройствах
   for (const key in sections) {
     const section = sections[key];
+
     if (section.readMore) {
       section.readMore.style.display = screenWidth < 768 ? "none" : "";
     }
 
-    // Показываем только первые элементы, если это не мобильное устройство
     if (section.list) {
+      // Применяем overflow: hidden для секций "brands" и "techs" при ширине экрана больше 768
+      if (screenWidth > 768 && (key === "brands" || key === "techs")) {
+        section.list.style.overflow = "hidden";
+      } else {
+        section.list.style.overflow = "";
+      }
+
       section.elements?.forEach((element, index) => {
-        element.style.display = index < elementsToShow || screenWidth < 768 ? "" : "none";
+        if (screenWidth >= 768 && index >= elementsToShow) {
+          element.classList.add("hidden");
+        } else {
+          element.classList.remove("hidden");
+        }
       });
     }
   }
@@ -52,22 +62,39 @@ function updateElementsToShow() {
 // Функция для инициализации Swiper
 function initializeSwiper(sectionKey) {
   const section = sections[sectionKey];
-  if (!section || !section.container || !section.list || section.elements.length === 0) return;
+  if (!section || !section.container || !section.list || swipers[sectionKey]) return;
 
   section.container.classList.add("swiper-container");
   section.list.classList.add("swiper-wrapper");
   section.elements.forEach((e) => e.classList.add("swiper-slide"));
 
   swipers[sectionKey] = new Swiper(section.container, {
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 10000, 
+      disableOnInteraction: false, 
+    },
+    breakpoints: {
+      320: { // Для мобильных устройств
+        slidesPerView: 'auto', // Авто количество слайдов
+      },
+      520: { // Для планшетов
+        slidesPerView: 2, // 2 слайда
+      }
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
   });
 
-  swipers[sectionKey].update();
+  // Показать пагинацию, если она существует
+  const pagination = section.container.querySelector('.swiper-pagination');
+  if (pagination) {
+    pagination.style.display = "block";
+  }
 }
 
 // Функция для уничтожения Swiper
@@ -78,29 +105,25 @@ function destroySwiper(sectionKey) {
     section.container?.classList.remove("swiper-container");
     section.list?.classList.remove("swiper-wrapper");
     section.elements.forEach((e) => e.classList.remove("swiper-slide"));
+
+    // Скрыть пагинацию, если она существует
+    const pagination = section.container.querySelector('.swiper-pagination');
+    if (pagination) {
+      pagination.style.display = "none";
+    }
+
     delete swipers[sectionKey];
   }
 }
 
-// Инициализация слайдеров
-function initializeSliders() {
+// Инициализация или уничтожение слайдера в зависимости от ширины экрана
+function initializeOrDestroySliders() {
   for (const key in sections) {
     if (screenWidth < 768) {
       initializeSwiper(key);
     } else {
       destroySwiper(key);
     }
-  }
-}
-
-// Обновление Swiper после отображения скрытых слайдов
-function updateSwiperOnToggle(sectionKey) {
-  const section = sections[sectionKey];
-  if (swipers[sectionKey]) {
-    section.elements.forEach((element) => {
-      element.style.display = "";
-    });
-    swipers[sectionKey].update();
   }
 }
 
@@ -111,9 +134,6 @@ for (const key in sections) {
     section.readMore.addEventListener("click", () => {
       const isShown = section.readMore.classList.toggle("shown");
       toggleElements(key, isShown);
-      if (isShown) {
-        updateSwiperOnToggle(key);
-      }
     });
   }
 }
@@ -127,15 +147,36 @@ function toggleElements(sectionKey, showAll) {
   if (section.readMore) {
     section.readMore.textContent = showAll ? "Скрыть все" : "Показать все";
   }
+
+  if (showAll) {
+    section.elements.forEach((element) => element.classList.remove("hidden"));
+  } else {
+    const elementsToShow = screenWidth < 768 ? 1000 : screenWidth < 1120 ? 6 : 8;
+    section.elements.forEach((element, index) => {
+      if (index >= elementsToShow) {
+        element.classList.add("hidden");
+      }
+    });
+  }
+
+  if (swipers[sectionKey]) {
+    swipers[sectionKey].update(); // Обновляем Swiper после изменения видимости элементов
+  }
 }
 
-// Инициализация после загрузки DOM
-document.addEventListener("DOMContentLoaded", () => {
-  if (!sections) return; // Проверка наличия секций
+// Обновление при изменении размеров окна
+window.addEventListener("resize", () => {
   screenWidth = window.innerWidth;
   updateElementsToShow();
-  initializeSliders();
+  initializeOrDestroySliders();
 });
+
+// Инициализация
+updateElementsToShow();
+initializeOrDestroySliders();
+
+
+
 
 
 
