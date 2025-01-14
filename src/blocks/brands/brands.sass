@@ -1,7 +1,7 @@
 .brands
   position: relative
   padding-bottom: 24px
-  margin: 15px 0 -5px 16px
+  margin: 15px 0 -5px 24px
   &::after
     content: ""
     text-align: right
@@ -20,10 +20,6 @@
     &::after
       display: none
 
-@media screen and (min-width: 880px)
-  .brands
-    margin: 32px 32px 49px 32px
-
 .brands__button
   margin: auto 16px auto auto
 
@@ -36,9 +32,9 @@
   display: flex !important
   cursor: pointer
   transition: transform .3s
-  &:hover img:last-child
+  &:hover 
     transition: transform .3s
-    transform: scale(1.1)
+    transform: scale(0.97)
   &:active
     transform: scale(0.97)
 
@@ -49,23 +45,14 @@
     display: flex
     flex-wrap: wrap
 
-@media screen and (min-width: 880px)
-  .brands__element
-    width: 240px
-    display: flex
 
 .brands__image
   margin: auto auto auto 16px
-
-@media screen and (min-width: 880px)
-  .brands__image
-    margin: auto auto auto 16px
 
 .brands__list
   height: 160px
   list-style: none
   padding: 0
-  overflow: hidden 
   transition: height 0.5s ease 
   &::-webkit-scrollbar
     width: 0
@@ -77,10 +64,6 @@
     flex-wrap: wrap
     gap: 16px 24px
     overflow: hidden
-
-@media screen and (min-width: 768px)
-  .brands__list
-    gap: 16px 24px
 
 @media screen and (min-width: 1120px)
   .brands__list

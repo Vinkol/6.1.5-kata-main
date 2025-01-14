@@ -1,7 +1,7 @@
 .tech
   position: relative
   padding-bottom: 24px
-  margin: 16px 0 -3px 16px
+  margin-left: 24px
   &::after
     content: ""
     text-align: right
@@ -12,16 +12,6 @@
     height: 160px
     background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
     z-index: 1
-
-@media screen and (min-width: 768px)
-  .tech
-    margin: 24px 24px -23px 24px
-    &::after
-      display: none
-
-@media screen and (min-width: 880px)
-  .tech
-    margin: 24px 32px 25px 32px
 
 .tech__button
   margin: auto 0 0 auto
@@ -35,13 +25,13 @@
   display: flex !important
   cursor: pointer
   padding: 16px
-  transition: transform .3s
   font-weight: 600
   line-height: 24px
   letter-spacing: -0.2px
-  &:hover img:last-child
+  transition: transform .3s
+  &:hover
     transition: transform .3s
-    transform: scale(1.1)
+    transform: scale(0.97)
   &:active
     transform: scale(0.97)
 
@@ -51,16 +41,11 @@
     display: flex
     flex-wrap: wrap
 
-@media screen and (min-width: 880px)
-  .tech__element
-    width: 240px
-    display: flex
 
 .tech__list
   height: 160px
   list-style: none
   padding: 0
-  overflow: hidden
   transition: height 0.5s ease 
   &::-webkit-scrollbar
     width: 0
@@ -70,11 +55,6 @@
   .tech__list
     display: flex
     flex-wrap: wrap
-    gap: 16px 24px
-  
-
-@media screen and (min-width: 768px)
-  .tech__list
     gap: 16px 24px
 
 @media screen and (min-width: 1120px)
