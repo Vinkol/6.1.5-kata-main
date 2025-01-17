@@ -2,6 +2,7 @@
   position: relative
   padding-bottom: 24px
   margin-left: 24px
+
   &::after
     content: ""
     text-align: right
@@ -16,7 +17,7 @@
 .tech__button
   margin: auto 0 0 auto
 
-.tech__element 
+.tech__element
   background-color: #FFFFFF
   height: 160px !important
   box-sizing: border-box
@@ -29,29 +30,25 @@
   line-height: 24px
   letter-spacing: -0.2px
   transition: transform .3s
-  &:hover
-    transition: transform .3s
-    transform: scale(0.97)
-  &:active
-    transform: scale(0.97)
 
-@media screen and (min-width: 768px)
-  .tech__element
-    width: 224px
-    display: flex
-    flex-wrap: wrap
-
+  &:hover, &:active
+    transform: scale(0.97)
 
 .tech__list
   height: 160px
   list-style: none
   padding: 0
-  transition: height 0.5s ease 
+  transition: height 0.5s ease
+
   &::-webkit-scrollbar
     width: 0
     height: 0
 
 @media screen and (min-width: 768px)
+  .tech__element
+    width: 224px
+    flex-wrap: wrap
+
   .tech__list
     display: flex
     flex-wrap: wrap

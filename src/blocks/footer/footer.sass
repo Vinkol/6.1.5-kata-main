@@ -11,6 +11,9 @@
   margin-top: 50px
   text-align: center
 
+  &__text
+    width: 320px
+
 @media screen and (min-width: 768px)
   .footer
     gap: 0 !important
@@ -21,21 +24,19 @@
     padding: 0 24px
     box-sizing: border-box
     justify-content: space-between
+
     span:first-child
       text-align: start !important
+
     span:last-child
       width: 330px
       text-align: end !important
+
+  .footer__text
+    width: 220px
 
 @media screen and (min-width: 880px)
   .footer
     margin-top: 66px
     padding-left: 29px
     padding-right: 35px
-
-.footer__text
-  width: 320px
-
-@media screen and (min-width: 768px)
-  .footer__text
-    width: 220px

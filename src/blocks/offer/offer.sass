@@ -1,6 +1,37 @@
 .offer
   margin: 6px 16px
 
+  &__link
+    margin: 16px 0
+    font-size: 16px
+    line-height: 24px
+    letter-spacing: -0.2px
+    font-weight: 600
+    display: inline-block
+    cursor: pointer
+    position: relative
+
+    &:hover
+      &::after
+        animation: offer 1s infinite
+
+    &::after
+      content: ''
+      position: absolute
+      background-image: url(../images/Line.svg)
+      background-repeat: no-repeat
+      background-position: center
+      display: inline-block
+      width: 6px
+      height: 26px
+      margin-left: 9px 
+
+  &__text
+    margin: 0
+    font-size: 14px
+    line-height: 20px
+    letter-spacing: 0.2px
+
 @media screen and (min-width: 768px)
   .offer
     margin: 24px 24px
@@ -18,32 +49,4 @@
   100%
     margin-left: 9px
 
-.offer__link
-  margin: 16px 0
-  font-size: 16px
-  line-height: 24px
-  letter-spacing: -0.2px
-  font-weight: 600
-  display: inline-block
-  cursor: pointer
-  &:hover
-    &::after
-      animation: offer 1s infinite
-      
-  &::after
-    content: ''
-    position: absolute;
-    background-image: url(../images/Line.svg)
-    background-repeat: no-repeat
-    background-position: center
-    display: inline-block
-    width: 6px
-    height: 26px
-    margin-left: 9px 
-
-.offer__text
-  margin: 0
-  font-size: 14px
-  line-height: 20px
-  letter-spacing: 0.2px
      

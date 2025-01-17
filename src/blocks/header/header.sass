@@ -6,51 +6,82 @@
   gap: 16px
   border-bottom: 1px solid $border-header
 
-@media screen and (min-width: 768px)
-  .header
-    padding: 0 24px
+  &__icon
+    width: 40px
+    height: 40px
+    margin: auto 0
+    align-items: center
+    border: none
+    background-color: $bg-white
+    cursor: pointer
+    transition: transform 0.5s
 
-@media screen and (min-width: 1366px)
-  .header
+    &:hover
+      transform: scale(1.1)
+
+  &__line_tablet
     display: none
 
-
-.header__icon
-  width: 40px
-  height: 40px
-  margin: auto 0
-  align-items: center
-  border: none
-  background-color: $bg-white
-  cursor: pointer
-  transition: transform 0.5s
-  &:hover
-    transform: scale(1.1)
-
-.header__line_tablet
-  display: none
-
-@media screen and (min-width: 768px)
-  .header__line_tablet
+  &__line
     display: flex
-    margin-left: 4px    
+    border-left: 2px solid $border
+    height: 32px
+    margin: auto 4px auto 0
 
-.header__line
-  display: flex
-  border-left: 2px solid $border
-  height: 32px
-  margin: auto 4px auto 0
+  &__logo
+    height: 50.81px
+    margin: auto auto auto 0
+    cursor: pointer
+    background: url('/src/images/logo.svg') no-repeat
+    width: 98px
+    background-size: contain
 
-.header__logo 
-  height: 50.81px
-  margin: auto auto auto 0
-  cursor: pointer
+  &__tablet-icons
+    display: none
 
-.header__tablet-icons
-  display: none
+    .open-phone
+      background: url('/src/images/phone-icon.svg')
 
-@media screen and (min-width: 480px)
+    .open-chat
+      background: url('/src/images/chat-icon.svg')
+
+    .profile-icon
+      background: url('/src/images/profile-icon.svg')
+
+  .repair-icon
+    background: url('/src/images/repair-icon.svg')
+    width: 40px
+    height: 40px
+
+  .checkstatus-icon
+    background: url('/src/images/checkstatus-icon.svg')
+    
+
+  .open-burger
+    background: url('/src/images/burger-icon.svg')
+    width: 40px
+    height: 40px
+    
+
+@media screen and (min-width: 520px)
   .header__tablet-icons
     display: flex
     margin-right: 4px
     gap: 16px
+  
+  .header__line_tablet
+    display: flex
+    margin-left: 4px
+    border-left: 2px solid $border
+    height: 32px
+    margin: auto 4px auto 0
+
+@media screen and (min-width: 768px)
+  .header
+    padding: 0 24px
+
+  
+
+@media screen and (min-width: 1366px)
+  .header
+    display: none

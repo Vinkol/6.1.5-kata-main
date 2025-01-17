@@ -3,6 +3,23 @@
   flex-direction: column
   justify-content: start
 
+  &__container
+    display: flex
+    flex-direction: column
+    margin: 0 16px 16px 16px
+
+  &__image
+    width: 100%
+    object-fit: contain
+
+  &__paragraph
+    margin: 0
+    font-size: 14px
+    line-height: 18px
+    letter-spacing: 0.2px
+    overflow: hidden
+    height: 90px
+
 @media screen and (min-width: 768px)
   .article
     flex-direction: row
@@ -10,39 +27,14 @@
     min-height: 208px
     margin: 0 24px 24px 24px
 
-@media screen and (min-width: 880px)
-  .article
-    margin: 0 32px 0 34px
-    padding-bottom: 49px
-
-  &__container
-  display: flex
-  flex-direction: column
-  margin: 0 16px 16px 16px
-
-@media screen and (min-width: 768px)
   .article__container
     margin: 0
 
-  .article__image
-  width: 100%
-  object-fit: contain
-
-@media screen and (min-width: 768px)
   .article__image
     width: 50%
     object-fit: cover
     border-radius: 10px
 
-.article__paragraph
-  margin: 0
-  font-size: 14px
-  line-height: 18px
-  letter-spacing: 0.2px
-  overflow: hidden
-  height: 90px
-
-@media screen and (min-width: 768px)
   .article__paragraph
     max-width: 312px
     height: 160px
@@ -50,6 +42,10 @@
     margin-bottom: -16px
 
 @media screen and (min-width: 880px)
+  .article
+    margin: 0 32px 0 34px
+    padding-bottom: 49px
+
   .article__paragraph
     max-width: 490px
     padding-top: 9px

@@ -1,3 +1,56 @@
+/* CSS классы для управления отображением меню */
+.menu-visible
+  display: flex !important
+  
+  .close-burger
+    background: url('/src/images/exit.svg') 
+    display: inline-block
+
+.menu-hidden
+  display: none !important
+
+.burger__icon
+  display: inline-block
+  width: 40px
+  height: 40px
+  transition: transform 0.3s ease
+  border: none
+
+  &:hover
+    transform: scale(1.1)  
+
+.close-burger
+  background: url('/src/images/exit.svg') 
+  display: none
+  
+
+
+.burger__logo
+  background: url('/src/images/logo.svg')
+  width: 98px
+  height: 52px
+  cursor: pointer
+
+
+.search-burger
+  background: url('/src/images/search.svg') 
+  
+
+
+.open-phone-burger
+  background: url('/src/images/phone-icon.svg')
+  
+
+
+.open-chat-burger
+  background: url('/src/images/chat-icon.svg')
+  
+
+
+.profile-burger
+  background: url('/src/images/profile-icon.svg')
+
+
 .burger
   position: fixed
   display: none
@@ -50,6 +103,10 @@
 @media screen and (min-width: 360px)
   .burger__footer
     margin: 0 24px 36px 24px
+  
+  .burger__footer-icons
+    display: flex
+    gap: 16px
 
 @media screen and (min-width: 450px)
   .burger__footer
@@ -57,14 +114,19 @@
 
 @media screen and (min-width: 1366px)
   .burger__footer
-    margin-top: 241px
+    margin-top: 195px
 
 .burger__header
   display: flex
   margin: 18px 16px 0 16px
+  justify-content: space-between
+  align-items: center
 
 @media screen and (min-width: 360px)
   .burger__header
+    display: flex
+    justify-content: space-between
+    align-items: center
     margin: 18px 24px 0 24px
 
 @media screen and (min-width: 1366px)
@@ -199,3 +261,5 @@
     line-height: 32px
     letter-spacing: -0.6px
     margin-top: 12px
+    
+  

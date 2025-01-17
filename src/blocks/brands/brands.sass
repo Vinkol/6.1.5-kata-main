@@ -2,6 +2,7 @@
   position: relative
   padding-bottom: 24px
   margin: 15px 0 -5px 24px
+
   &::after
     content: ""
     text-align: right
@@ -13,52 +14,52 @@
     background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
     z-index: 1
 
+  &__button
+    margin: auto 16px auto auto
+
+  &__element
+    background-color: $bg-white
+    height: 72px !important
+    box-sizing: border-box
+    border: 1px solid $border
+    border-radius: 5px
+    display: flex !important
+    cursor: pointer
+    transition: transform 0.3s
+
+    &:hover
+      transform: scale(0.97)
+
+    &:active
+      transform: scale(0.97)
+
+  &__image
+    margin: auto auto auto 16px
+
+  &__list
+    height: 160px
+    list-style: none
+    padding: 0
+    transition: height 0.5s ease
+
+    &::-webkit-scrollbar
+      width: 0
+      height: 0
+
 @media screen and (min-width: 768px)
   .brands
-    margin: 24px 24px
+    margin-left: 24px
+    margin-bottom: 24px
     padding-bottom: 2px
+
     &::after
       display: none
 
-.brands__button
-  margin: auto 16px auto auto
-
-.brands__element
-  background-color: $bg-white
-  height: 72px !important
-  box-sizing: border-box
-  border: 1px solid $border
-  border-radius: 5px
-  display: flex !important
-  cursor: pointer
-  transition: transform .3s
-  &:hover 
-    transition: transform .3s
-    transform: scale(0.97)
-  &:active
-    transform: scale(0.97)
-
-
-@media screen and (min-width: 768px)
   .brands__element
     width: 224px
     display: flex
     flex-wrap: wrap
 
-
-.brands__image
-  margin: auto auto auto 16px
-
-.brands__list
-  height: 160px
-  list-style: none
-  padding: 0
-  transition: height 0.5s ease 
-  &::-webkit-scrollbar
-    width: 0
-    height: 0
-
-@media screen and (min-width: 768px)
   .brands__list
     display: flex
     flex-wrap: wrap

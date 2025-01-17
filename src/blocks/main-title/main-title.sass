@@ -2,38 +2,53 @@
   display: flex
   margin-top: 24px
 
-@media screen and (min-width: 1366px)
-  .main-title
-    margin: 0
-    padding-top: 42px
+  &__container
+    display: none
 
-.main-title__container
-  display: none
-
-@media screen and (min-width: 1366px)
-  .main-title__container
+  &__element
     display: flex
-    margin: auto 0 auto auto
+    cursor: pointer
+    margin: auto 32px auto 0
 
+  &__icon
+    margin: auto 0 auto 8px
+    border: none
+    width: 40px
+    height: 40px
+    cursor: pointer
+    transition: transform 0.5s
 
-.main-title__element
-  display: flex
-  cursor: pointer
-  margin: auto 32px auto 0
+    &:hover
+      transform: scale(1.1)
 
-.main-title__icon
-  margin: auto 0 auto 8px
-  cursor: pointer
-  transition: transform 0.5s
-  &:hover
-    transform: scale(1.1)
+  .repair-icon
+    background: url('/src/images/repair-icon.svg')
+    width: 40px
+    height: 40px
 
-.main-title__line
-  border-right: 4px solid $main-title-line
-  border-top-right-radius: 4px
-  border-bottom-right-radius: 4px
-  height: 40px
-  margin-right: 12px
+  .checkstatus-icon
+    background: url('/src/images/checkstatus-icon.svg')
+    width: 40px
+    height: 40px
+
+  &__line
+    border-right: 4px solid $main-title-line
+    border-top-right-radius: 4px
+    border-bottom-right-radius: 4px
+    height: 40px
+    margin-right: 12px
+
+  &__paragraph
+    margin: auto 0
+    font-size: 16px
+    line-height: 24px
+    letter-spacing: -0.1px
+    font-weight: 600
+
+  &__title
+    margin: auto 0
+    font-size: 28px
+    letter-spacing: -0.6px
 
 @media screen and (min-width: 768px)
   .main-title__line
@@ -43,14 +58,11 @@
   .main-title__line
     margin-right: 30px
 
-.main-title__paragraph
-  margin: auto 0
-  font-size: 16px
-  line-height: 24px
-  letter-spacing: -0.1px
-  font-weight: 600
+@media screen and (min-width: 1366px)
+  .main-title
+    margin: 0
+    padding-top: 42px
 
-.main-title__title
-  margin: auto 0
-  font-size: 28px
-  letter-spacing: -0.6px
+  .main-title__container
+    display: flex
+    margin: auto 0 auto auto

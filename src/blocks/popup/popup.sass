@@ -5,166 +5,159 @@
   left:  0
   width: 100%
   height: 100%
-  background-color:$bg-opacity !important
+  background-color: $bg-opacity !important
   font-family: "TTLakes", "Arial", "Helvetica", sans-serif
   z-index: 14
 
-.popup__close
-  width: 40px
-  height: 40px
-  border: none
-  background-color: $bg-white
-  padding: 0
-  position: absolute
-  top: 24px
-  left: 16px
-  background: url(../images/burger.svg)
-  cursor: pointer
-  transition: transform .3s 
-  &:hover
-    transform: scale(1.05)
-  &:active
-    transform: scale(1)
+  &__close
+    width: 40px
+    height: 40px
+    border: none
+    background-color: $bg-white
+    padding: 0
+    position: absolute
+    top: 24px
+    left: 16px
+    background: url(../images/burger.svg)
+    cursor: pointer
+    transition: transform .3s 
+    &:hover
+      transform: scale(1.05)
+    &:active
+      transform: scale(1)
+
+  &__container
+    width: 100%
+    height: 100vh
+    background-color: $bg-white
+    top: 0
+    display: block
+    flex-direction: column
+    z-index: 11
+    position: relative
+    padding: 104px 16px 0 16px 
+    box-sizing: border-box
+
+  &__form
+    font-size: 16px
+    line-height: 24px
+    letter-spacing: -0.2px
+    margin-top: 24px
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+  &__input
+    height: 48px
+    box-sizing: border-box
+    padding: 12px 16px
+    border: 1px solid $border
+    border-radius: 10px
+    &::placeholder
+      color: $placeholder-color  
+
+  &__message
+    margin: 0
+    font-size: 14px
+    line-height: 16px
+    letter-spacing: 0.1px
+
+  &__span
+    color: $btn-pink
+    cursor: pointer
+    &:hover
+      text-decoration: underline
+
+  &__submit
+    padding: 0 0 0 18px 
+    display: flex
+    align-items: center
+    justify-content: left
+    font-size: 12px
+    line-height: 24px
+    font-weight: 700
+    letter-spacing: -0.15px
+    color: $bg-white
+    text-transform: uppercase
+    width: 136px
+    height: 32px
+    margin: 3px 0 0 auto
+    border-radius: 16px
+    background-image: url(../images/goside.svg)
+    background-repeat: no-repeat
+    background-position: center right 11px
+    border: none
+    background-color: $btn-pink
+    transition: transform .3s
+    cursor: pointer
+    will-change: transform
+    &:hover
+      transform: scale(1.05)
+    &:active
+      transform: scale(1)
+
+  &__textarea
+    resize: none
+    height: 118px
+    border: 1px solid $border
+    box-sizing: border-box
+    padding: 14px 16px
+    border-radius: 10px
+    &::placeholder
+      color: $placeholder-color
+
+  &__title
+    display: inline-block
+    margin: 0
+    font-size: 24px
+    line-height: 32px
+    letter-spacing: -0.6px
+    font-weight: 700
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      display: inline-block
+      top: -5px
+      left: -16px
+      height: 40px
+      width: 4px
+      border-top-right-radius: 4px
+      border-bottom-right-radius: 4px
+      background-color: $main-title-line
+
+  /* Стиль для поля с ошибкой */
+  &__input.error, &__textarea.error 
+    border: 1px solid red
+
+  /* Сообщения об ошибках */
+  .error-message 
+    color: red
+    font-size: 12px
+    display: none /* Скрыто по умолчанию */
 
 @media screen and (min-width: 450px)
-  .popup__close
-    top: 32px
-    left: -72px
+  .popup
+    &__close
+      top: 32px
+      left: -72px
 
-.popup__container 
-  width: 100%
-  height: 100vh
-  background-color: $bg-white
-  top: 0
-  display: block
-  flex-direction: column
-  z-index: 11
-  position: relative
-  padding: 104px 16px 0 16px 
-  box-sizing: border-box
+    &__container
+      padding: 40px 32px 0 32px 
+      right: 0
+      max-width: 440px
+      box-shadow: 16px 0 52px 0 $box-shadow
+      position: fixed
 
-@media screen and (min-width: 450px)
-  .popup__container
-    padding: 40px 32px 0 32px 
-    right: 0
-    max-width: 440px
-    box-shadow: 16px 0 52px 0 $box-shadow
-    position: fixed
+    &__title
+      &::before
+        top: -8px
+        left: -32px
 
-.popup__form
-  font-size: 16px
-  line-height: 24px
-  letter-spacing: -0.2px
-  margin-top: 24px
-  display: flex
-  flex-direction: column
-  gap: 16px
-
-.popup__input
-  height: 48px
-  box-sizing: border-box
-  padding: 12px 16px
-  border: 1px solid $border
-  border-radius: 10px
-  &::placeholder
-    color: $placeholder-color  
-
-.popup__message
-  margin: 0
-  font-size: 14px
-  line-height: 16px
-  letter-spacing: 0.1px
-
-@media screen and (min-width: 450px)
-  .popup__message
-    letter-spacing: 0.15px   
-    
-.popup__span
-  color: $btn-pink
-  cursor: pointer
-  &:hover
-    text-decoration: underline
-
-.popup__submit
-  padding: 0 0 0 18px 
-  display: flex
-  align-items: center
-  justify-content: left
-  font-size: 12px
-  line-height: 24px
-  font-weight: 700
-  letter-spacing: -0.15px
-  color: $bg-white
-  text-transform: uppercase
-  width: 136px
-  height: 32px
-  margin: 3px 0 0 auto
-  border-radius: 16px
-  background-image: url(../images/goside.svg)
-  background-repeat: no-repeat
-  background-position: center right 11px
-  border: none
-  background-color: $btn-pink
-  transition: transform .3s
-  cursor: pointer
-  will-change: transform
-  &:hover
-    transform: scale(1.05)
-  &:active
-    transform: scale(1)
-
-@media screen and (min-width: 450px)
   .popup__submit
     margin-top: 7px
     padding: 0 0 0 20px
 
-.popup__textarea
-  resize: none
-  height: 118px
-  border: 1px solid $border
-  box-sizing: border-box
-  padding: 14px 16px
-  border-radius: 10px
-  &::placeholder
-    color: $placeholder-color
-
-.popup__title
-  display: inline-block
-  margin: 0
-  font-size: 24px
-  line-height: 32px
-  letter-spacing: -0.6px
-  font-weight: 700
-  position: relative
-  &::before
-    position: absolute
-    content: ''
-    display: inline-block
-    top: -5px
-    left: -16px
-    height: 40px
-    width: 4px
-    border-top-right-radius: 4px
-    border-bottom-right-radius: 4px
-    background-color: $main-title-line
-
-/* Добавьте стиль для поля с ошибкой */
-.popup__input.error, .popup__textarea.error 
-  border: 1px solid red
-
-
-/* Сообщения об ошибках */
-.error-message 
-  color: red
-  font-size: 12px
-  display: none /* Скрыто по умолчанию */
-
-
-@media screen and (min-width: 450px)
-  .popup__title
-    &::before
-      top: -8px
-      left: -32px
 
 
 

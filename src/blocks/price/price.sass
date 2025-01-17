@@ -1,7 +1,9 @@
+// Основной блок цены
 .price
   position: relative
   padding-bottom: 24px
   margin: 15px 0 0 8px
+
   &::after
     content: ""
     text-align: right
@@ -13,22 +15,21 @@
     background: linear-gradient(to right, $bg-grey-gradient, $bg-grey)
     z-index: 1
 
-@media screen and (min-width: 768px)
-  .price
-    padding: 0 
-    margin: 0 24px 0 24px !important
+  @media screen and (min-width: 768px)
+    padding: 0
+    margin: 0 24px
     &::after
       display: none
 
-@media screen and (min-width: 880px)
-  .price
-    margin: 0 32px 0 32px !important
+  @media screen and (min-width: 880px)
+    margin: 0 32px
 
+// Кнопка внутри блока цены
 .price__button
-  padding: 0 0 0 12px 
-  display: flex;
-  align-items: center;
-  justify-content: left;
+  padding: 0 0 0 12px
+  display: flex
+  align-items: center
+  justify-content: left
   font-size: 12px
   line-height: 24px
   letter-spacing: -0.15px
@@ -48,15 +49,17 @@
   cursor: pointer
   transition: transform .3s
   will-change: transform
+
   &:hover
     transform: scale(1.05)
+
   &:active
     transform: scale(1)
 
-@media screen and (min-width: 880px)
-  .price__button
+  @media screen and (min-width: 880px)
     right: 24px
 
+// Элемент внутри блока цены
 .price__element
   position: relative
   background-color: $bg-white
@@ -71,8 +74,7 @@
   line-height: 18px
   letter-spacing: 0.2px
 
-@media screen and (min-width: 768px)
-  .price__element
+  @media screen and (min-width: 768px)
     flex-direction: row
     height: 65px !important
     box-sizing: border-box
@@ -80,16 +82,16 @@
     padding: 0 16px
     &:last-child
       border: none
+
     span
       line-height: 64px
       &::before
         display: none
 
-@media screen and (min-width: 880px)
-  .price__element
+  @media screen and (min-width: 880px)
     padding: 0 23px
 
-
+// Список элементов с ценами
 .price__list
   height: 200px !important
   list-style: none
@@ -98,32 +100,31 @@
     width: 0
     height: 0
 
-@media screen and (min-width: 768px)
-  .price__list
+  @media screen and (min-width: 768px)
     height: 324px !important
     margin-top: 0
 
+// Сервисная информация
 .price__service
   width: 228px
+
   &::before
     display: block
     margin-bottom: 3px
     color: $active-grey
     content: 'Ремонтные услуги'
 
-@media screen and (min-width: 768px)
-  .price__service
+  @media screen and (min-width: 768px)
     width: 51.7%
 
-@media screen and (min-width: 880px)
-  .price__service
+  @media screen and (min-width: 880px)
     width: 45%
 
+// Заголовки таблицы цен
 .price__table-title
   display: none
 
-@media screen and (min-width: 768px)
-  .price__table-title
+  @media screen and (min-width: 768px)
     gap: 16px
     color: $active-grey
     display: flex
@@ -138,10 +139,10 @@
       &::before
         display: none
 
-@media screen and (min-width: 880px)
-  .price__table-title
+  @media screen and (min-width: 880px)
     padding: 8px 23px
 
+// Срок
 .price__time
   &::before
     display: block
@@ -149,6 +150,7 @@
     color: $active-grey
     content: 'Срок'
 
+// Цена
 .price__value
   &::before
     display: block
@@ -156,10 +158,8 @@
     color: $active-grey
     content: 'Цена'
 
-@media screen and (min-width: 768px)
-  .price__value
+  @media screen and (min-width: 768px)
     width: 11.6%
 
-@media screen and (min-width: 880px)
-  .price__value
+  @media screen and (min-width: 880px)
     width: 20.7%
