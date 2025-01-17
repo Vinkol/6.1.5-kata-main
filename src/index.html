@@ -14,9 +14,9 @@
     <section class="burger">
       <div class="burger__container">
         <div class="burger__header">
-          <img src="./images/burger.svg" alt="Иконка закрытия" class="burger__icon close-burger">
-          <img src="./images/logo.svg" alt="Логотип" class="burger__logo">
-          <img src="./images/search.svg" alt="Иконка статуса" class="burger__icon">
+          <button class="burger__icon close-burger" aria-label="Закрыть меню"></button>
+          <span class="burger__logo" href="#"></span>
+          <button class="burger__icon search-burger" aria-label="Поиск"></button>
         </div>
         <ul class="burger__list">
           <li class="burger__list-element">Ремонт техники</li>
@@ -30,9 +30,9 @@
         </ul>
         <div class="burger__footer">
           <div class="burger__footer-icons">
-            <img src="./images/phone-icon.svg" alt="Иконка телефона" class="burger__icon open-phone-burger">
-            <img src="./images/chat-icon.svg" alt="Иконка чата" class="burger__icon open-chat-burger">
-            <img src="./images/profile-icon.svg" alt="Иконка профиля" class="burger__icon">
+            <button class="burger__icon open-phone-burger" aria-label="Позвонить"></button>
+            <button class="burger__icon open-chat-burger" aria-label="Написать в чат"></button>
+            <button class="burger__icon profile-burger" aria-label="Профиль"></button>
           </div>
           <a class="burger__mail" href="mailto:mail@cps.com">mail@cps.com</a>
           <a class="burger__phone" href="tel:88008908900">8 800 890 8900</a>
@@ -85,17 +85,17 @@
       </div>
     </div>
     <header class="header">
-      <img src="./images/burger-icon.svg" alt="Иконка меню" class="header__icon open-burger">
-      <div class="header__line header__line_tablet"></div>
-      <img src="./images/logo.svg" alt="Логотип" class="header__logo">
+      <button class="header__icon open-burger"></button>
+      <div class="header__line_tablet"></div>
+      <div class="header__logo"></div>
       <div class="header__tablet-icons">
-        <img src="./images/phone-icon.svg" alt="Иконка телефона" class="header__icon open-phone">
-        <img src="./images/chat-icon.svg" alt="Иконка чата" class="header__icon open-chat">
-        <img src="./images/profile-icon.svg" alt="Иконка профиля" class="header__icon">
+        <button class="header__icon open-phone"></button>
+        <button class="header__icon open-chat"></button>
+        <button class="header__icon profile-icon"></button>
       </div>
       <div class="header__line"></div>
-      <img src="./images/repair-icon.svg" alt="Иконка заявки" class="header__icon">
-      <img src="./images/checkstatus-icon.svg" alt="Иконка статуса" class="header__icon">
+      <button class="header__icon repair-icon"></button>
+      <button class="header__icon checkstatus-icon"></button>
     </header>
     <main class="main">
       <section class="content">
@@ -105,11 +105,11 @@
           <div class="main-title__container">
             <div class="main-title__element">
               <p class="main-title__paragraph">Оставить заявку</p>
-              <img src="./images/repair-icon.svg" alt="Иконка заявки" class="main-title__icon">
+              <button class="main-title__icon repair-icon"></button>
             </div>
             <div class="main-title__element">
               <p class="main-title__paragraph">Статус ремонта</p>
-              <img src="./images/checkstatus-icon.svg" alt="Иконка статуса" class="main-title__icon">
+              <button class="main-title__icon checkstatus-icon"></button>
             </div>
           </div>
         </div>
