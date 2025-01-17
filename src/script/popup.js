@@ -24,11 +24,13 @@ const menus = {
 
 // Функции для управления меню
 const openMenu = (menu) => {
-  menu.style.display = 'flex';
+  menu.classList.add('menu-visible');
+  menu.classList.remove('menu-hidden');
 };
 
 const closeMenu = (menu) => {
-  menu.style.display = 'none';
+  menu.classList.add('menu-hidden');
+  menu.classList.remove('menu-visible');
 };
 
 const toggleMenu = (menu, isBurger = false) => {
@@ -64,3 +66,4 @@ Object.keys(menus).forEach((key) => {
     closeBtn.addEventListener('click', () => closeMenu(menu));
   }
 });
+
